@@ -22,3 +22,12 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 .DS_Store
+/.metadata/
+awsumproj/.classpath
+awsumproj/.project
+awsumproj/.settings/.jsdtscope
+*.prefs
+*.component
+*.container
+*.name
+*.MF

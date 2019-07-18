@@ -2,32 +2,47 @@ package beans;
 
 public class Employee {
 
-	public Employee(String username, String password) {
-		// TODO Auto-generated constructor stub
-		this.username = username;
-		this.password = password;
+	public Employee() {
+
+
 	}
-	String username;
-	String password;
 	
-	public String getUsername() {
-		return username;
+	public Employee(String firstname, String lastname, int badgenum) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.badgenum = badgenum;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+
+	private String firstname;
+	private String lastname;
+	private int badgenum;
+	
+	public String getFirstname() {
+		return firstname;
 	}
-	public String getPassword() {
-		return password;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	public int getBadgenum() {
+		return badgenum;
+	}
+	public void setBadgenum(int badgenum) {
+		this.badgenum = badgenum;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		result = prime * result + badgenum;
+		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
+		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
 		return result;
 	}
 	@Override
@@ -39,21 +54,26 @@ public class Employee {
 		if (getClass() != obj.getClass())
 			return false;
 		Employee other = (Employee) obj;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
+		if (badgenum != other.badgenum)
 			return false;
-		if (username == null) {
-			if (other.username != null)
+		if (firstname == null) {
+			if (other.firstname != null)
 				return false;
-		} else if (!username.equals(other.username))
+		} else if (!firstname.equals(other.firstname))
+			return false;
+		if (lastname == null) {
+			if (other.lastname != null)
+				return false;
+		} else if (!lastname.equals(other.lastname))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Employee [username=" + username + ", password=" + password + "]";
+		return "Employee [firstname=" + firstname + ", lastname=" + lastname + ", badgenum=" + badgenum + "]";
 	}
+	
+	
+
 	
 }
